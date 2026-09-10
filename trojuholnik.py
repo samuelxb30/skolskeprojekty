@@ -1,6 +1,6 @@
 while True:
  akysposobinput = int(input("Ked chces trojuholnik od najvacieho po najmensi stlac 1 a ked opacne tak 2 ---> "))
-                #Ten int len meni hodnotu zo stringu na cislo :D
+
 
  def prvysposob():
    znak = "X"
