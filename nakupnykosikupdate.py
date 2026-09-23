@@ -38,8 +38,8 @@ while True:
          for polozka, cena in kosik:
            spolu += cena
        
-           print("\n--------------------")
-           for polozka, cena in kosik:
+         print("\n--------------------")
+         for polozka, cena in kosik:
             if polozka in ovocie:
              kategoria = "ovocie"
                
@@ -53,8 +53,8 @@ while True:
              kategoria = "ine"
 
             print(f"{polozka} - {cena} € - {kategoria}")
-           print("      -------")
-           print(f"spolu: {spolu} €")
+         print("      -------")
+         print(f"spolu: {spolu} €")
      elif anoniezobrazenieinput.lower() == "nie":
        break
 
