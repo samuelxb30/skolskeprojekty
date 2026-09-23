@@ -22,53 +22,40 @@ for polozka, cena in polozkyaceny.items():
   print(polozka, cena)
 
 while True:
- try:
-   pocetpoloziek = int(input("\nkolko chces pridat poloziek do kosika? ---> "))
+      
+   vyber = input("co chces pridat? ---> ")
+   
+   if vyber.lower() == "uz nic" or vyber.lower() == "nothing":
+    break
+   
+   elif vyber in polozkyaceny:
+    cena = polozkyaceny[vyber]
+    kosik.append([vyber, cena])
 
- except ValueError:
-  print("Napis cislo pocet")
-  continue
+   else:
+    print("Taku vec nemame")
 
 
- for i in range(pocetpoloziek):
-      vyber = input("co chces pridat? ---> ")
-
-      if vyber.lower() == "uz nic":
-       break
-
-      if vyber in polozkyaceny:
-       cena = polozkyaceny[vyber]
-       kosik.append([vyber, cena])
-
-      else:
-       print("Taku vec nemame")
-
- anoniezobrazenieinput = input("Chces zobrazit kosik? ---> ")
-
- if anoniezobrazenieinput.lower() == "ano":
-
-      spolu = 0
-      for polozka, cena in kosik:
-        spolu += cena
-
-      print("\n--------------------")
-      for polozka, cena in kosik:
+   anoniezobrazenieinput = input("Chces zobrazit kosik? ---> ")
+   if anoniezobrazenieinput.lower() == "ano":
+     spolu = 0
+   for polozka, cena in kosik:
+     spolu += cena
        
-          if polozka in ovocie:
-           kategoria = "ovocie"
- 
-          elif polozka in zelenina:
-           kategoria = "zelenina"
- 
-          elif polozka in sladkosti:
-           kategoria = "sladkost"
- 
-          else:
-           kategoria = "ine"
-           
-          print(f"{polozka} - {cena} € - {kategoria}")
-      print("      -------")
-      print(f"spolu: {spolu} €")
-
- else:
-  break
+     print("\n--------------------")
+     for polozka, cena in kosik:
+      if polozka in ovocie:
+       kategoria = "ovocie"
+               
+      elif polozka in zelenina:
+       kategoria = "zelenina"
+               
+      elif polozka in sladkosti:
+       kategoria = "sladkost"
+               
+      else:
+       kategoria = "ine"
+       
+      print(f"{polozka} - {cena} € - {kategoria}")
+     print("      -------")
+     print(f"spolu: {spolu} €")
