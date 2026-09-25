@@ -2,7 +2,7 @@ ovocie = ["marhula", "jablko"]
 zelenina = ["petrzlen", "mrkva"]
 sladkosti = ["cukor", "cokolada"]
 
-
+kupon = ["beli67", "dariuskral", "matojegoat", "MGfitman69"]
 
 polozkyaceny = {
   "jablko": (1, 100),
@@ -43,32 +43,41 @@ while True:
       print("Nemame tolko kusov")
 
    elif vyber.lower() == "uz nic" or vyber.lower() == "nothing":
-     anoniezobrazenieinput = input("Chces zobrazit kosik? ---> ")
 
-     if anoniezobrazenieinput.lower() == "ano":
+      anoniezobrazenieinput = input("Chces zobrazit kosik? ---> ")
+
+      if anoniezobrazenieinput.lower() == "ano":
          spolu = 0
 
          for polozka, cena, mnozstvo in kosik:
            spolu += cena * mnozstvo
-       
+
+         kuponzobrazenieinput = input("uplatni kupon ---> ")
+         if kuponzobrazenieinput in kupon:
+           spolu -= 10
+           print("\nKupon uplatneny\n")
+
+         elif kuponzobrazenieinput.lower() == "nie" or kuponzobrazenieinput.lower() == "nemam":
+           print("Kupon neuplatneny")
+
          print("\n--------------------")
          for polozka, cena, mnozstvo in kosik:
-            if polozka in ovocie:
-             kategoria = "ovocie"
+             if polozka in ovocie:
+              kategoria = "ovocie"
                
-            elif polozka in zelenina:
-             kategoria = "zelenina"
+             elif polozka in zelenina:
+              kategoria = "zelenina"
                
-            elif polozka in sladkosti:
-             kategoria = "sladkost"
+             elif polozka in sladkosti:
+              kategoria = "sladkost"
                
-            else:
-             kategoria = "ine"
+             else:
+              kategoria = "ine"
 
-            print(f"{polozka} - {cena}€ x {mnozstvo} - {kategoria}")
+             print(f"{polozka} - {cena}€ x {mnozstvo} - {kategoria}")
          print("      -------")
          print(f"spolu: {spolu} €")
-     elif anoniezobrazenieinput.lower() == "nie":
+      elif anoniezobrazenieinput.lower() == "nie":
        break
 
    else:
