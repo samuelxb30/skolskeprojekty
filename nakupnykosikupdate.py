@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+ovocie = ["marhula", "jablko"]
+zelenina = ["petrzlen", "mrkva"]
+sladkosti = ["cukor", "cokolada"]
+
+kupon = ["beli67", "dariuskral", "matojegoat", "MGfitman69"]
+>>>>>>> 4c7f86e5c9509b324a62a39682e5a4ae6e45c019
 
 polozkyaceny = {
   "jablko": (1,"ovocie", 100),
@@ -59,6 +67,7 @@ while True:
 
          for polozka, cena, kategoria, mnozstvo in kosik:
            spolu += cena * mnozstvo
+<<<<<<< HEAD
 
          overo = False
          platny = False
@@ -104,11 +113,40 @@ while True:
          print("\n--------------------")
          for polozka, cena, kategoria, mnozstvo in kosik:
 
+=======
+
+         kuponzobrazenieinput = input("uplatni kupon ---> ")
+         if kuponzobrazenieinput in kupon:
+           spolu -= 10
+           print("\nKupon uplatneny\n")
+
+         elif kuponzobrazenieinput.lower() == "nie" or kuponzobrazenieinput.lower() == "nemam":
+           print("Kupon neuplatneny")
+
+         print("\n--------------------")
+         for polozka, cena, mnozstvo in kosik:
+             if polozka in ovocie:
+              kategoria = "ovocie"
+               
+             elif polozka in zelenina:
+              kategoria = "zelenina"
+               
+             elif polozka in sladkosti:
+              kategoria = "sladkost"
+               
+             else:
+              kategoria = "ine"
+
+>>>>>>> 4c7f86e5c9509b324a62a39682e5a4ae6e45c019
              print(f"{polozka} - {cena}€ x {mnozstvo} - {kategoria}")
          print("      -------")
          print(f"spolu: {spolu} €")
       elif anoniezobrazenieinput.lower() == "nie":
+<<<<<<< HEAD
         break
+=======
+       break
+>>>>>>> 4c7f86e5c9509b324a62a39682e5a4ae6e45c019
 
    else:
     print("Taku vec nemame")
